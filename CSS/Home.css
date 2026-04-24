@@ -85,4 +85,38 @@
     background: var(--main-color);
     color: black;
 }
+@media (max-width: 768px) {
+
+    .home {
+        flex-direction: column;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    .home-content {
+        align-items: center;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+        line-height: 1.4;
+    }
+
+    .home-img img {
+        width: 65vw;
+    }
+
+    .social-icon {
+        justify-content: center;
+    }
+
+    .skills {
+        justify-content: center;
+        max-width: 100%;
+    }
+}
 
