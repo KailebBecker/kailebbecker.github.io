@@ -17,6 +17,7 @@ html{
     font-size: 55%;
     overflow-x: hidden;
     scroll-padding-top: 120px;
+  
 }
 body{
     background: var(--bg-color);
@@ -108,7 +109,6 @@ body{
 section{
     min-height: 100vh;
     padding: 12rem 15% 6rem;
-    padding-top: 12rem;
     position: relative;
     z-index: 1;
     
@@ -245,6 +245,9 @@ section{
     .navbar.active {
         display: flex;
     }
+    html {
+        scroll-padding-top: 90px;
+    }
 }
 .overlay {
     pointer-events: none;
@@ -290,3 +293,4 @@ section{
     color: white;
     cursor: pointer;
 }
+
