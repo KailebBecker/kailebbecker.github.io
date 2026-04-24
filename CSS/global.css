@@ -22,6 +22,8 @@ body{
     background: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    position: relative;
+    z-index: 0;
 
 }
 .header{
@@ -35,7 +37,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
     
 }
 #menu-icon{
@@ -107,6 +109,9 @@ section{
     min-height: 100vh;
     padding: 12rem 15% 6rem;
     padding-top: 12rem;
+    position: relative;
+    z-index: 1;
+    
 }
 
 .btn{
@@ -243,4 +248,13 @@ section{
 }
 .overlay {
     pointer-events: none;
+}
+.lightbox {
+    display: none;
+    pointer-events: none;
+}
+
+.lightbox.active {
+    display: block;
+    pointer-events: auto;
 }
