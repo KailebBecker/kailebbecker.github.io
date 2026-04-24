@@ -22,8 +22,9 @@ body {
 
 /* EACH SECTION */
 .scroll-section {
-    position: absolute;
-    inset: 0;
+    
+
+
     height: 100vh;
     width: 100%;
 
@@ -194,6 +195,20 @@ body {
         scroll-behavior: smooth;
     }
 
+    .scroll-landing {
+        height: auto;
+    }
+
+    .scroll-section {
+        opacity: 1 !important;
+        transform: none !important;
+
+        position: relative;
+        min-height: 100vh;
+    }
+
+
+
 }
 
 @media (max-width: 500px) {
@@ -208,7 +223,7 @@ body {
     }
 }
 @media (min-width: 769px) {
-    body {
+   body {
         overflow: hidden;
     }
 }
