@@ -183,3 +183,21 @@ body {
     transform: translateX(-15px) scale(1.03);
     text-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
+@media (max-width: 768px) {
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-item,
+    .photo-item.tall {
+        height: auto;
+    }
+}
