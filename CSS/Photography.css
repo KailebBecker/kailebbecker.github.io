@@ -2,7 +2,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* controlled scroll */
+    
     font-family: "Poppins", sans-serif;
 }
 
@@ -10,6 +10,7 @@ html, body {
 body {
     background: #0f172a; /* fallback */
     color: #f9fafb;
+    overflow-x: hidden;
 }
 
 /* MAIN CONTAINER */
@@ -204,5 +205,10 @@ body {
     .photo-item,
     .photo-item.tall {
         height: auto;
+    }
+}
+@media (min-width: 769px) {
+    body {
+        overflow: hidden;
     }
 }
