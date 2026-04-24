@@ -5,35 +5,41 @@ let isScrolling = false;
 // set initial state
 sections[current].classList.add("active");
 
-function scrollToSection(direction) {
-    if (isScrolling) return;
+// ONLY run controlled scroll on desktop
+if (window.innerWidth > 768) {
 
-    isScrolling = true;
+    function scrollToSection(direction) {
+        if (isScrolling) return;
 
-    sections[current].classList.remove("active");
+        isScrolling = true;
 
-    if (direction === "down") {
-        sections[current].classList.add("prev");
-        current = Math.min(current + 1, sections.length - 1);
-    } else {
-        current = Math.max(current - 1, 0);
+        sections[current].classList.remove("active");
+
+        if (direction === "down") {
+            sections[current].classList.add("prev");
+            current = Math.min(current + 1, sections.length - 1);
+        } else {
+            current = Math.max(current - 1, 0);
+        }
+
+        sections[current].classList.remove("prev");
+        sections[current].classList.add("active");
+
+        setTimeout(() => {
+            isScrolling = false;
+        }, 800);
     }
 
-    sections[current].classList.remove("prev");
-    sections[current].classList.add("active");
-
-    setTimeout(() => {
-        isScrolling = false;
-    }, 800);
+    window.addEventListener("wheel", (e) => {
+        if (e.deltaY > 0) {
+            scrollToSection("down");
+        } else {
+            scrollToSection("up");
+        }
+    });
 }
 
-window.addEventListener("wheel", (e) => {
-    if (e.deltaY > 0) {
-        scrollToSection("down");
-    } else {
-        scrollToSection("up");
-    }
-   
+// 🔥 THIS MUST BE OUTSIDE the wheel event
 const links = document.querySelectorAll(".scroll-section a");
 
 links.forEach(link => {
@@ -49,5 +55,4 @@ links.forEach(link => {
             window.location.href = href;
         }, 500);
     });
-});
 });
