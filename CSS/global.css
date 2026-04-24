@@ -241,3 +241,6 @@ section{
         display: flex;
     }
 }
+.overlay {
+    pointer-events: none;
+}
