@@ -92,4 +92,16 @@
     color: #052e16;
     box-shadow: 0 0 20px rgba(143, 255, 154, 0.4);
 }
+@media (max-width: 768px) {
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .about-img img {
+        width: 250px;
+    }
+}
 
