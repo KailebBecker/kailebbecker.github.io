@@ -164,12 +164,41 @@
 }
 @media (max-width: 768px) {
 
+    .projects {
+        padding: 10rem 5%;
+    }
+
+    /* TITLE */
+    .project-text h2 {
+        font-size: 2.6rem;
+        line-height: 1.2;
+    }
+
+    /* INTRO */
+    .project-intro {
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+
+    /* SECTION HEADINGS */
+    .project-section h4 {
+        font-size: 1.6rem;
+    }
+
+    /* LIST TEXT */
+    .project-section ul {
+        font-size: 1.3rem;
+    }
+
+    /* STACK LAYOUT */
     .project-container {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
+    /* IMAGES */
     .project-visuals img {
         max-height: none;
+        width: 100%;
     }
 }
