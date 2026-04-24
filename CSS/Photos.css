@@ -180,3 +180,8 @@
     color: white;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
