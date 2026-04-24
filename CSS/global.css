@@ -106,6 +106,7 @@ body{
 section{
     min-height: 100vh;
     padding: 12rem 15% 6rem;
+    padding-top: 12rem;
 }
 
 .btn{
