@@ -1,0 +1,164 @@
+:root{
+    --bg-color: #080808;
+    --second-bg-color: #fdfdfd;
+    --text-color: #E5E7EB;
+    --main-color: #8fff9a;  
+    --accent: #2f3835;
+}
+.projects {
+    padding-top: 12rem;
+}
+
+.section-title {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+
+.project-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    align-items: flex-start;
+}
+
+.project-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-text h2 {
+    font-size: 3.5rem;
+    color: var(--main-color);
+}
+
+.project-intro {
+    font-size: 1.6rem;
+    color: #E5E7EB;
+}
+
+.project-section h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #60A5FA;
+    opacity: 0.85;
+}
+
+.project-section ul {
+    font-size: 1.4rem;
+    padding-left: 1.5rem;
+}
+.project-visuals {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-visuals img {
+    width: 100%;
+    border-radius: 1rem;
+    max-height: 300px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.95);
+}
+
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+
+    cursor: zoom-out;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    display: block;
+    margin: auto;
+
+    max-width: 90%;
+    max-height: 90%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+
+    font-size: 4rem;
+    color: white;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+
+}
+
+
+
+.zoomable {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.zoomable:hover {
+    transform: scale(1.02);
+}
+
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.img-wrapper img {
+    display: block;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+/* overlay icon */
+.zoom-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 2rem;
+    padding: 5px 10px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+/* show on hover */
+.img-wrapper:hover .zoom-icon {
+    opacity: 1;
+}
+.project-container:target {
+    outline: 2px solid var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+    transition: 0.3s;
+}
+.project-container {
+    transition: 0.3s ease;
+}

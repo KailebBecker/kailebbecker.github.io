@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins";
+}
+:root{
+    --bg-color: #080808;
+    --second-bg-color: #fdfdfd;
+    --text-color: #E5E7EB;
+    --main-color: #8fff9a;  
+    --accent: #2f3835;
+}
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 120px;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+
+}
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 4rem 15%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    
+}
+#menu-icon{
+   font-size: 3.5rem; 
+   color: var(--main-color);
+   display: none;
+}
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.gradient-text {
+    background: linear-gradient(270deg,#449d63 10%,#8fff9a 100%);
+    background-clip: text;
+    color: transparent;
+}
+.subspan{
+    background: linear-gradient(
+        270deg,
+        #3671f1 10%,
+        #60A5FA 100%
+        
+
+    );
+    background-clip: text;
+    color: transparent;
+}
+.navbar a{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+.gradient-btn{
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background: linear-gradient(
+        270deg,
+        #449d63 10%,
+        #8fff9a 100%
+    );
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    color: #052e16; /* FIXED */
+    border: none;
+    white-space: nowrap; /* better than text-wrap */
+   
+}
+.gradient-btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+    
+}
+section{
+    min-height: 100vh;
+    padding: 12rem 15% 6rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 3rem;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    color: black;
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+}
+.Buttons{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.social-icon {
+    position: relative;
+    z-index: 10;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}

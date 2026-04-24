@@ -1,0 +1,182 @@
+/* PAGE */
+.photos {
+    padding: 12rem 10%;
+    background: #e5e7eb; /* soft gray */
+}
+
+/* CATEGORY */
+.category-title {
+ font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: #111827;
+}
+.photo-subsection{
+    margin-bottom: 6rem;
+    padding-bottom: 3rem;
+    border-bottom: 5px solid rgba(0,0,0,0.1);
+}
+.photo-subsection h2 {
+    font-family: 'Playfair Display', serif;
+    color: #374151;
+}
+
+/* GRID */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* ITEM */
+.photo-item {
+    background: white;
+    padding: 10px 10px 40px 10px;
+    border-radius: 6px;
+
+    box-shadow: 
+        0 4px 10px rgba(0,0,0,0.08),
+        0 12px 30px rgba(0,0,0,0.12);
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-item.tall {
+    height: 500px;
+}
+
+/* IMAGE */
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+
+    top: 10px;      /* matches padding */
+    left: 10px;
+    right: 10px;
+    bottom: 40px;   /* leaves space for caption */
+
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+
+    opacity: 0;
+    transition: 0.3s ease;
+
+    pointer-events: none;
+}
+
+/* HOVER */
+.photo-item:hover {
+    transform: translateY(-5px);
+}
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+.photo-item:hover .overlay {
+    opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    font-size: 1rem;
+    color: #000000;
+
+    font-family: 'Special Elite', monospace;
+
+}
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 200px;
+
+    width: 0;
+}
+
+/* animation only runs when this class is added */
+.typewriter.animate {
+    animation: typing 1.5s steps(20, end) forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.photo-item:nth-child(odd) {
+    transform: rotate(-1deg);
+}
+
+.photo-item:nth-child(even) {
+    transform: rotate(1deg);
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+
+    cursor: zoom-out;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    display: block;
+    margin: auto;
+
+    max-width: 90%;
+    max-height: 90%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+
+    font-size: 4rem;
+    color: white;
+    cursor: pointer;
+}

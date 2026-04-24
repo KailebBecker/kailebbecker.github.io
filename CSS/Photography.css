@@ -1,0 +1,185 @@
+/* RESET */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* controlled scroll */
+    font-family: "Poppins", sans-serif;
+}
+
+/* PAGE BASE */
+body {
+    background: #0f172a; /* fallback */
+    color: #f9fafb;
+}
+
+/* MAIN CONTAINER */
+.scroll-landing {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+/* EACH SECTION */
+.scroll-section {
+    position: absolute;
+    inset: 0;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20%;
+
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.8s ease;
+
+    overflow: hidden;
+}
+
+/* ACTIVE SECTION */
+.scroll-section.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+/* PREVIOUS SECTION (for upward scroll) */
+.scroll-section.prev {
+    transform: translateY(-100%);
+}
+
+/* BACKGROUND IMAGE LAYER */
+.scroll-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    z-index: 0;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.scroll-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    z-index: 1;
+}
+
+/* TEXT */
+.scroll-section a {
+    position: relative;
+    z-index: 2;
+
+    font-size: 5rem;
+    text-decoration: none;
+    color: #f9fafb;
+
+    opacity: 0.4;
+    transform: translateY(20px);
+
+    transition: all 0.4s ease;
+
+    text-align: right;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ACTIVE TEXT */
+.scroll-section.active a {
+    opacity: 1;
+    transform: translateX(-10px);
+
+    text-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* UNDERLINE */
+.scroll-section a::after {
+    content: "";
+    display: block;
+
+    width: 50px;
+    height: 2px;
+
+    background: rgba(255,255,255,0.7);
+
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+/* BACKGROUND IMAGES */
+.scroll-section:nth-child(1)::before {
+    background-image: url("../Images/grad1.jpg");
+}
+
+.scroll-section:nth-child(2)::before {
+    background-image: url("../Images/proposal1.jpg");
+}
+
+.scroll-section:nth-child(3)::before {
+    background-image: url("../Images/car1.jpg");
+}
+
+/* OPTIONAL: slight text personality differences */
+.scroll-section:nth-child(1) a {
+    letter-spacing: 2px;
+}
+
+.scroll-section:nth-child(2) a {
+    font-style: italic;
+}
+
+.scroll-section:nth-child(3) a {
+    font-weight: 300;
+}
+
+/* HEADER FIX (so it doesn’t clash) */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+
+    z-index: 100;
+}
+.fade-out {
+    opacity: 0;
+    transform: scale(1.02);
+    transition: all 0.5s ease;
+}
+.scroll-section.fade-out a {
+    transform: translateX(-30px);
+    opacity: 0;
+}
+.scroll-section a {
+    position: relative;
+    z-index: 2;
+
+    font-size: 5rem;
+    text-decoration: none;
+    color: #f9fafb;
+
+    opacity: 0.4;
+    transform: translateY(20px);
+
+    transition: all 0.4s ease;
+
+    text-align: right;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* 🔥 HOVER EFFECT */
+.scroll-section a:hover {
+    opacity: 1;
+    transform: translateX(-15px) scale(1.03);
+    text-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
